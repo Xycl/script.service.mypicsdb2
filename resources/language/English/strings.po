@@ -1,0 +1,33 @@
+# XBMC Media Center language file
+# Addon Name: MyPicsDB Update Service
+# Addon id: script.service.mypicsdb
+# Addon Provider: Xycl
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32000"
+msgid "MyPictures Database Library Updater"
+msgstr ""
+
+msgctxt "#32001"
+msgid "[B]Seconds[/B] to wait for 1st scan"
+msgstr ""
+
+msgctxt "#32002"
+msgid "[B]Minutes[/B] to wait for subsequent scans"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Set above minutes to 0 to disable the service!"
+msgstr ""
