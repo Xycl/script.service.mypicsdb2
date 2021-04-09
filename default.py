@@ -32,34 +32,34 @@ class UpdateService():
                 KODIMONITOR = xbmc.Monitor()
                 KODIMONITOR.waitForAbort( 5 )
                 self.slept = self.slept + 5
-                xbmc.log("Kodi MyPicsDB2 Update Service wait loop. Waiting %s"%self.slept, xbmc.LOGINFO)  #
+                xbmc.log("Kodi MyPicsDB2 Update Service wait loop. Waiting %s"%self.slept, xbmc.LOGDEBUG)  #
 
         if xbmc.Monitor().abortRequested():
             return
             
         script = "%s,--refresh"% join( __homepath__, "..", "plugin.image.mypicsdb2", "scanpath.py")
-        xbmc.log("Kodi MyPicsDB2 Update Service starts automatic scan of pictures", xbmc.LOGINFO)   #
+        xbmc.log("Kodi MyPicsDB2 Update Service starts automatic scan of pictures", xbmc.LOGDEBUG)   #
         xbmc.executebuiltin('RunScript(%s)'%script)  
                     
         self.slept = 0
-        xbmc.log("Kodi MyPicsDB2 Update Service after wait loop", xbmc.LOGINFO)   #
+        xbmc.log("Kodi MyPicsDB2 Update Service after wait loop", xbmc.LOGDEBUG)   #
         while not xbmc.Monitor().abortRequested():
 
             try:
                 # then wait sleep_period (value of var is in seconds)
                 sleep_period = abs(int(__settings__.getSetting( "SLEEP_PERIOD" )) * 60)
-                xbmc.log("Kodi MyPicsDB2 Update Service after wait loop. sleep_period %s"%sleep_period, xbmc.LOGINFO)   #
+                xbmc.log("Kodi MyPicsDB2 Update Service after wait loop. sleep_period %s"%sleep_period, xbmc.LOGDEBUG)   #
                 if sleep_period > 0 and self.slept >= sleep_period:
                     self.slept = 0
                     script = "%s,--refresh"% join( __homepath__, "..", "plugin.image.mypicsdb2", "scanpath.py")
-                    xbmc.log("Kodi MyPicsDB2 Update Service starts automatic scan of pictures", xbmc.LOGINFO)
+                    xbmc.log("Kodi MyPicsDB2 Update Service starts automatic scan of pictures", xbmc.LOGDEBUG)
                     xbmc.executebuiltin('RunScript(%s)'%script)                    
 
                 # sleep at least 5 minutes
                 if sleep_period < 5:
                     sleep_period = 5
                     
-                xbmc.log("Kodi MyPicsDB2 Update Service after wait loop. Waiting %s"%self.slept, xbmc.LOGINFO)   #
+                xbmc.log("Kodi MyPicsDB2 Update Service after wait loop. Waiting %s"%self.slept, xbmc.LOGDEBUG)   #
                 # sleep 1 minute
                 KODIMONITOR = xbmc.Monitor()
                 KODIMONITOR.waitForAbort( 5 )
