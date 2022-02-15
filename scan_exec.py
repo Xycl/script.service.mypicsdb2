@@ -12,8 +12,7 @@ __homepath__ = __settings__.getAddonInfo('path')
 
 def scan_exec():
     xbmc.log("scan_exec.py : Starting Kodi Image Library Update", xbmc.LOGINFO)
-    script = "%s,--refresh"% join( __homepath__, "..", "plugin.image.mypicsdb2", "scanpath.py")
-    xbmc.executebuiltin('RunScript(%s)'%script)                
+    common.run_script("script.module.mypicsdb2scanner,--refresh")         
 
 if __name__=="__main__":
     try:
